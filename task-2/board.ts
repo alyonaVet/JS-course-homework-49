@@ -1,7 +1,8 @@
 const alpha:string = "abcdefghijklmnopqrstuvwxyz";
 const chessBoard = (width: number, height: number): string => {
-    width = width < 27 ? width : 26
-    const letters:string = `  ${alpha.slice(0,width)}   \n`;
+    const repetitions: number = Math.ceil(width / alpha.length);
+    const extendedAlpha: string = alpha.repeat(repetitions);
+    const letters:string = `  ${extendedAlpha.slice(0,width)}   \n`;
     const horizBorder:string = `  ${'-'.repeat(width)}   \n`;
 
     let chessboard: string = '';
